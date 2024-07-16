@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+:root {
+  --bg-clr: #111;
+  --text-clr: #eee;
+
+  --checkbox-bg-clr: #333;
+  --checkbox-border-clr: #555;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--text-clr);
+  background-color: var(--bg-clr);
+}
