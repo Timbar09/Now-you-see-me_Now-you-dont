@@ -52,6 +52,51 @@ body {
   transition: background-color 0.3s;
 }
 
+.checkbox:checked {
+  animation: shrink 0.5s ease forwards;
+}
+
+.checkbox:not(:checked) {
+  animation: grow 0.5s ease forwards;
+}
+
+@keyframes shrink {
+  0% {
+    scale: 1;
+    background-color: var(--checkbox-bg-clr);
+    border: solid 1px var(--checkbox-border-clr);
+  }
+  50% {
+    scale: 0;
+    background-color: var(--checkbox-bg-clr);
+    border: solid 1px var(--checkbox-border-clr);
+  }
+  51% {
+    scale: 0;
+    background-color: transparent;
+    border: solid 1px transparent;
+  }
+  100% {
+    scale: 1;
+    background-color: transparent;
+    border: solid 1px transparent;
+  }
+}
+
+@keyframes grow {
+  0% {
+    scale: 0;
+    background-color: transparent;
+    border: solid 1px transparent;
+  }
+
+  100% {
+    scale: 1;
+    background-color: var(--checkbox-bg-clr);
+    border: solid 1px var(--checkbox-border-clr);
+  }
+}
+
 .checkbox:before,
 .checkbox:after {
   --dimension: 0.15em;
