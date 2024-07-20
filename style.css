@@ -28,3 +28,31 @@ body {
   color: var(--text-clr);
   background-color: var(--bg-clr);
 }
+
+.checkbox__container {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.checkbox {
+  --dimension: 1.25em;
+
+  appearance: none;
+  margin: 0;
+  position: relative;
+  width: var(--dimension);
+  height: var(--dimension);
+  background-color: var(--checkbox-bg-clr);
+  border: 1px solid var(--checkbox-border-clr);
+  border-radius: 0.25em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkbox__label {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+}
