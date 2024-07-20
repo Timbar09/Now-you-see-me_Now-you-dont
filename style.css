@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
 :root {
+  --primary-clr-1: #2bbee7;
+  --primary-clr-2: #167e9b;
   --bg-clr: #111;
   --text-clr: #eee;
 
@@ -32,11 +34,11 @@ body {
 .checkbox__container {
   display: flex;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.5em;
 }
 
 .checkbox {
-  --dimension: 1.25em;
+  --dimension: 1.5em;
 
   appearance: none;
   margin: 0;
@@ -48,6 +50,18 @@ body {
   border-radius: 0.25em;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.checkbox:before,
+.checkbox:after {
+  --dimension: 0.15em;
+
+  content: "";
+  position: absolute;
+  top: calc(50% - var(--dimension) / 2);
+  width: var(--dimension);
+  height: var(--dimension);
+  border-radius: 10rem;
 }
 
 .checkbox__label {
