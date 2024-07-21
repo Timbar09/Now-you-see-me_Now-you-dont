@@ -35,21 +35,22 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5em;
+  scale: 4;
 }
 
 .checkbox {
   --dimension: 1.5em;
+  --tick-dimension: 0.15em;
 
   appearance: none;
   margin: 0;
   position: relative;
   width: var(--dimension);
   height: var(--dimension);
-  background-color: var(--checkbox-bg-clr);
-  border: 1px solid var(--checkbox-border-clr);
-  border-radius: 0.25em;
+  border: 1px solid transparent;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s;
+  rotate: 45deg;
 }
 
 .checkbox:checked {
@@ -57,7 +58,7 @@ body {
 }
 
 .checkbox:not(:checked) {
-  animation: grow 0.5s ease forwards;
+  animation: grow 0.5s 0.75s ease forwards;
 }
 
 @keyframes shrink {
@@ -99,13 +100,12 @@ body {
 
 .checkbox:before,
 .checkbox:after {
-  --dimension: 0.15em;
-
   content: "";
   position: absolute;
-  top: calc(50% - var(--dimension) / 2);
-  width: var(--dimension);
-  height: var(--dimension);
+  top: calc(50% - var(--tick-dimension) / 2);
+  left: calc(50% - var(--tick-dimension) / 2);
+  width: var(--tick-dimension);
+  height: var(--tick-dimension);
   border-radius: 10rem;
 }
 
