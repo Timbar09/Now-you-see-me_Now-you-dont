@@ -128,6 +128,25 @@ body {
   transition: background-color 0.3s 0.3s ease-in-out, width 0.5s 0.75s ease-in-out;
 }
 
+.checkbox::after {
+  background-color: transparent;
+  top: 0;
+  left: calc((var(--dimension) * 0.5) - var(--tick-dimension));
+  height: var(--tick-dimension);
+}
+
+.checkbox:not(:checked)::after {
+  transition: background-color 0.3s 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.checkbox:checked::after {
+  background-color: var(--primary-clr-2);
+  top: 0;
+  left: calc((var(--dimension) * 0.5) - var(--tick-dimension));
+  height: calc(var(--dimension) * 0.75);
+  transition: background-color 0.3s 0.3s ease-in-out, height 0.5s 1s ease-in-out;
+}
+
 .checkbox__label {
   position: relative;
   cursor: pointer;
