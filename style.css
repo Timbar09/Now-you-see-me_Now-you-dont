@@ -2,7 +2,7 @@
 
 :root {
   --primary-clr-1: #2bbee7;
-  --primary-clr-2: #167e9b;
+  --primary-clr-2: #0e728e;
   --bg-clr: #111;
   --text-clr: #eee;
 
@@ -107,6 +107,25 @@ body {
   width: var(--tick-dimension);
   height: var(--tick-dimension);
   border-radius: 10rem;
+}
+
+.checkbox::before {
+  background-color: transparent;
+  top: calc(var(--dimension) * 0.65);
+  left: 0;
+  width: var(--tick-dimension);
+}
+
+.checkbox:not(:checked)::before {
+  transition: background-color 0.3s 0.5s ease-in-out, width 0.5s ease-in-out;
+}
+
+.checkbox:checked::before {
+  background-color: var(--primary-clr-1);
+  top: calc(var(--dimension) * 0.65);
+  left: 0;
+  width: calc(var(--dimension) / 2);
+  transition: background-color 0.3s 0.3s ease-in-out, width 0.5s 0.75s ease-in-out;
 }
 
 .checkbox__label {
