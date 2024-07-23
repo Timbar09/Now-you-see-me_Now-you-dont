@@ -194,3 +194,26 @@ body {
   width: calc(100% + var(--stroke-dimension));
   transition: width 1.25s 0.75s, background-color 0.5s 2s;
 }
+
+.checkbox__label--text .delayed-text {
+  margin-left: -2.55em;
+  opacity: 0;
+}
+
+.delayed-text1 {
+  animation: slide-in 1s 2.25s ease-out forwards;
+}
+
+.delayed-text2 {
+  animation: slide-in 1s 4s ease-out forwards;
+}
+
+@keyframes slide-in {
+  0% {
+    margin-left: -2.55em;
+  }
+  100% {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
