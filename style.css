@@ -35,7 +35,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5em;
-  scale: 4;
+  scale: 1.5;
 }
 
 .checkbox {
@@ -154,6 +154,9 @@ body {
 
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
   transition: color 0.3s;
 }
 
@@ -161,7 +164,7 @@ body {
   color: var(--hover);
 }
 
-.checkbox:checked + .checkbox__label {
+.checkbox:checked + .checkbox__label--text {
   color: var(--checked);
 }
 
@@ -181,13 +184,13 @@ body {
 }
 
 .checkbox__label--text::before {
-  background-color: transparent;
+  background-color: var(--primary-clr-1);
   width: 0;
   transition: width 0.5s, background-color 0.3s 0.5s;
 }
 
-.checkbox:checked + .checkbox__label .checkbox__label--text::before {
+.checkbox:checked + .checkbox__label--text::before {
   background-color: var(--checked);
-  width: 100%;
-  transition: width 1.25s 0.75s, background-color 0.3s 0.3s;
+  width: calc(100% + var(--stroke-dimension));
+  transition: width 1.25s 0.75s, background-color 0.5s 2s;
 }
