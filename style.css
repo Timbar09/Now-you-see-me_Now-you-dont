@@ -4,7 +4,8 @@
   --primary-clr-1: #2bbee7;
   --primary-clr-2: #0e728e;
   --bg-clr: #111;
-  --text-clr: #eee;
+  --text-clr-1: #eee;
+  --text-clr-2: #a6a6a6;
 
   --checkbox-bg-clr: #333;
   --checkbox-border-clr: #555;
@@ -27,15 +28,15 @@ body {
   font-size: 1.5em;
   align-items: center;
   min-height: 100vh;
-  color: var(--text-clr);
+  color: var(--text-clr-1);
   background-color: var(--bg-clr);
 }
 
 .checkbox__container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5em;
-  scale: 1.5;
+  gap: 2em;
 }
 
 .checkbox {
@@ -157,6 +158,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5em;
+  scale: 1.5;
   transition: color 0.3s;
 }
 
@@ -216,4 +218,21 @@ body {
     margin-left: 0;
     opacity: 1;
   }
+}
+
+.checkbox__info {
+  text-align: center;
+  font-size: 0.675em;
+  font-weight: 400;
+  color: var(--text-clr-2);
+  max-width: 25em;
+}
+
+.checkbox__info a {
+  color: var(--primary-clr-1);
+  text-decoration: none;
+}
+
+.checkbox__info a:hover {
+  text-decoration: underline;
 }
